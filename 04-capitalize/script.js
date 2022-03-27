@@ -7,7 +7,19 @@
 */
 
 function capitalize(str) {
-    // Напишите код здесь
+    if (!str || str === ' ') {
+        return str
+    }
+    str = str.replace(/\s\s+/g, ' ').split(' ');
+    for (let i=0;i<str.length;i++) {
+        if (str[i] === '') {
+            continue;
+        } else {
+            str[i] = str[i][0].toUpperCase() + str[i].slice(1);
+        } 
+    }
+    str = str.join(' ');
+    return str
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
