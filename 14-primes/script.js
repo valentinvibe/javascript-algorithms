@@ -5,14 +5,26 @@
  * Функция должна возвращать массив простых чисел от 2 до n.
  * 
 */
+6
+1 2 3 4 5 6
+
++6/2 = 0 
++6/3 = 0
+6/4 = 2
++6/5 = 1
+6/6 = 0
 
 function primes(num) {
-    let res = []
+    let res = [];
     
-    for (let i = 1; i < num; i++) {
-        if (num % i !== 0) {
-            res.push(i)
+    for (let i = 2; i <= num; i++) {
+        for (let j = 2; j < i; j++) {
+            if (i % j == 0) {
+                
+            }
+            res.push()
         }
+        
     }
     return res
 }
@@ -20,4 +32,4 @@ function primes(num) {
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(primes(6)); // [2, 3, 5]
-console.log(primes(17)); // [2, 3, 5, 7, 11, 13, 17]
+//console.log(primes(17)); // [2, 3, 5, 7, 11, 13, 17]
