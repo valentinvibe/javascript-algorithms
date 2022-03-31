@@ -8,7 +8,22 @@
 */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+    let res = [];
+    if (arr1.length < arr2.length) {
+        for (let i = 0; i < arr1.length; i++) {
+            if ((arr2.indexOf(arr1[i]) > -1) && (res.indexOf(arr1[i]) === -1)) {
+                res.push(arr1[i]);
+            };
+        }
+    } else {
+        for (let i = 0; i < arr2.length; i++) {
+            if ((arr1.indexOf(arr2[i]) > -1) && (res.indexOf(arr1[i]) === -1)) {
+                res.push(arr2[i])
+            };
+        }
+    }
+    
+    return res
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

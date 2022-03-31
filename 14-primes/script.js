@@ -7,7 +7,14 @@
 */
 
 function primes(num) {
-    // Напишите код здесь
+    let res = []
+    
+    for (let i = 1; i < num; i++) {
+        if (num % i !== 0) {
+            res.push(i)
+        }
+    }
+    return res
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
