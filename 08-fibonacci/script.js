@@ -9,23 +9,23 @@
 */
 
 function fibonacci(n) {
-  let a = 0;
-  let b = 1;
-
-  switch (n) {
-      case 0: return a;
-      case 1: return b;
+  let fn = n,
+      fn1 = 0,
+      fn2 = 1,
+      fib = [0,1];
+  
+  if (n > 1) {
+    for (let i = 2; i <= n; i++) {
+      fn = fn1 + fn2;
+      fn1 = fn2;
+      fn2 = fn;
+      fib.push(fn)
+    }
   }
- 
-  for (let i = 3; i <= n; i++) {
-    let c = a + b;
-    a = b;
-    b = c;
-  }
-  return b;
+  
+  return fib[n-1]
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(fibonacci(4)); // 2. Четвёртое число последовательности — двойка (0, 1, 1, 2)
-console.log(fibonacci(0));

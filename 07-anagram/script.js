@@ -11,7 +11,21 @@
 function anagram(str1, str2) {
     str1 = str1.toLowerCase();
     str2 = str2.toLowerCase();
-    for (let i=1;i<str1.length;i++) {
+    const str1Len = str1.length,
+          str2Len = str2.length;
+    let count = 0;
+    if (str1Len !== str2Len) {
+        return false
+    }
+    for (let i = 0; i < str1Len; i++) {
+        if (str1[i] === str2[i]) {
+            count++;
+        }
+    if (count === str1Len) {
+        return false
+    }
+    }
+    for (let i=1; i < str1Len; i++) {
         if (str2.indexOf(str1[i]) !== -1) {
             continue;
         } else {
@@ -19,12 +33,11 @@ function anagram(str1, str2) {
         }
     }
     return true
-
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-//console.log(anagram('finder', 'Friend')); // true
-//console.log(anagram('hello', 'bye')); // false
+console.log(anagram('finder', 'Friend')); // true
+console.log(anagram('hello', 'bye')); // false
 console.log(anagram('aba', 'ba')); 
 console.log(anagram('up', 'UP')); 
