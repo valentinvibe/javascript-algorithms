@@ -8,32 +8,42 @@
  * 
 */
 
-function anagram(str1, str2) {
+// function anagram(str1, str2) {
+//     str1 = str1.toLowerCase();
+//     str2 = str2.toLowerCase();
+//     const str1Len = str1.length,
+//           str2Len = str2.length;
+//     let count = 0;
+//     if (str1Len !== str2Len) {
+//         return false
+//     }
+//     for (let i = 0; i < str1Len; i++) {
+//         if (str1[i] === str2[i]) {
+//             count++;
+//         }
+//     if (count === str1Len) {
+//         return false
+//     }
+//     }
+//     for (let i=1; i < str1Len; i++) {
+//         if (str2.indexOf(str1[i]) !== -1) {
+//             continue;
+//         } else {
+//             return false
+//         }
+//     }
+//     return true
+// }
+
+function anagram(str1,str2) {
     str1 = str1.toLowerCase();
-    str2 = str2.toLowerCase();
-    const str1Len = str1.length,
-          str2Len = str2.length;
-    let count = 0;
-    if (str1Len !== str2Len) {
+    str2 = str2.toLowerCase()
+    if (str1 === str2) {
         return false
     }
-    for (let i = 0; i < str1Len; i++) {
-        if (str1[i] === str2[i]) {
-            count++;
-        }
-    if (count === str1Len) {
-        return false
-    }
-    }
-    for (let i=1; i < str1Len; i++) {
-        if (str2.indexOf(str1[i]) !== -1) {
-            continue;
-        } else {
-            return false
-        }
-    }
-    return true
+    return [...str1].sort().toString() === [...str2].sort().toString()
 }
+
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
